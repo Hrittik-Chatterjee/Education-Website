@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         {
           path:'/courses/:id',
           element:<IndCourseDetails></IndCourseDetails>,
-          loader: ({params})=>fetch (`https://edu-10-server.vercel.app/${params.id}`)
+          loader: ({params})=>fetch (`https://edu-10-server.vercel.app/courses/${params.id}`)
         },
   
       ]
