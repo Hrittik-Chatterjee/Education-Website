@@ -17,7 +17,7 @@ const Blog = () => {
                     Why are you using firebase?What other options do you have to implement authentication?
                 </div>
                 <div className="collapse-content">
-                    <p>Indeed, Firebase is a less technical and time-saving alternative to writing full-fledged backend code for dynamic apps it is easy to use</p>
+                    <p>Indeed, Firebase is a less technical and time-saving alternative to writing full-fledged backend code for dynamic apps it is easy to use.Firebase alternatives are MongoDB ,Oracle Database,Amazon Redshift,DataStax Enterprise,Redis Enterprise Cloud.</p>
                 </div>
             </div>
             <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box my-8">
@@ -25,7 +25,7 @@ const Blog = () => {
                     How does the private route work
                 </div>
                 <div className="collapse-content">
-                    <p>tabIndex={0} attribute is necessary to make the div focusable</p>
+                    <p>private route redirect URL and on authenticate condition. there are certain conditions if the user fulfils those conditions private route redirect to url otherwise it doesn't show</p>
                 </div>
             </div>
             <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mt-8">
@@ -33,7 +33,7 @@ const Blog = () => {
                     What is node? How does Node Work?
                 </div>
                 <div className="collapse-content">
-                    <p>tabIndex={0} attribute is necessary to make the div focusable</p>
+                    <p>Node allows developers to write JavaScript code that runs directly in a computer process itself instead of in a browser. node is used as a backend service  Node. js runs on chrome v8 engine which converts javascript code into machine code</p>
                 </div>
             </div>
         </div>
