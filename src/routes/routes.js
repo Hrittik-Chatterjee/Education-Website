@@ -8,6 +8,7 @@ import Login from "../Componenets/Login";
 import Register from "../Componenets/Register";
 import Main from "../Layout/Main";
 import Profile from "../Componenets/Profile";
+import IndCourseDetails from "../Componenets/IndCourseDetails";
 
 const router = createBrowserRouter([
     {
@@ -48,7 +49,12 @@ const router = createBrowserRouter([
         {
           path: '/register',
           element: <Register></Register>
-        }
+        },
+        {
+          path:'/courses/:id',
+          element:<IndCourseDetails></IndCourseDetails>,
+          loader: ({params})=>fetch (`http://localhost:5000/courses/${params.id}`)
+        },
   
       ]
     }
