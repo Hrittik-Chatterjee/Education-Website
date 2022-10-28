@@ -6,12 +6,12 @@ const Courses = () => {
     const [courseDetails, setCourseDetails] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/courses-categories')
+        fetch('https://edu-10-server.vercel.app/courses-categories')
             .then(res => res.json())
             .then(data => setCourses(data))
     })
     useEffect(() => {
-        fetch('http://localhost:5000/all-courses')
+        fetch('https://edu-10-server.vercel.app/all-courses')
             .then(res => res.json())
             .then(data => setCourseDetails(data))
     })
