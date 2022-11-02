@@ -15,7 +15,7 @@ const IndCourseDetails = () => {
                 <div>
                     <h1 className='text-4xl text-red-900 font-bold  '>This course Contains</h1>
                     <ul className='text-black my-4 font-semibold'>
-                        <li>{loaderData.hours} hours of video</li>
+                        <li>{loaderData.hours} hours of videos</li>
                         <li>{loaderData.article} articles </li>
                         <li>{loaderData.download} downloadable recourses</li>
                     </ul>
