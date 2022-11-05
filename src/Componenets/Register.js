@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../Context/UserContext'
 
@@ -11,6 +11,7 @@ import { AuthContext } from '../Context/UserContext'
 
 
 const Register = () => {
+  const {emailError, setEmailError}= useState()
   const { createUser, updateName, signInWithGoogle, signInWithGithub, } = useContext(AuthContext)
 
   const handleSubmit = (e) => {
@@ -32,11 +33,13 @@ const Register = () => {
           alert('Name updated')
         })
         .catch(error => {
-          console.log(error)
+          setEmailError(error)
         })
 
       })
-      .catch(error => console.log(error))
+      .catch(error => {
+        setEmailError(error)
+      })
   }
 
   // Gooogle sign in 
@@ -93,6 +96,7 @@ const Register = () => {
           <h1 className='my-3 text-4xl font-bold'>Register</h1>
           <p className='text-sm text-gray-400'>Create a new account</p>
         </div>
+        <div><p>{emailError}</p></div>
         <form
           onSubmit={handleSubmit}
           noValidate=''

@@ -3,8 +3,8 @@ import React from 'react';
 const Blog = () => {
     return (
         <div>
-            <p className='text-center my-8 text-8xl font-semibold'>Some Question and Answers</p>
-            <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mt-36 mb-8">
+            <p className='text-center my-3 md:my-8 text-2xl md:text-8xl font-semibold'>Some Question and Answers</p>
+            <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box md:mt-36 mt-16 mb-8">
                 <div className="collapse-title text-xl font-medium">
                     What is Cors?
                 </div>

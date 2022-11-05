@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Componenets/Blog";
 import Courses from "../Componenets/Courses";
@@ -9,6 +11,9 @@ import Register from "../Componenets/Register";
 import Main from "../Layout/Main";
 import Profile from "../Componenets/Profile";
 import IndCourseDetails from "../Componenets/IndCourseDetails";
+import PremiumCourseDetails from "../Componenets/PremiumCourseDetails";
+import PrivateRoute from "./PrivateRoute";
+
 
 const router = createBrowserRouter([
     {
@@ -54,6 +59,11 @@ const router = createBrowserRouter([
           path:'/courses/:id',
           element:<IndCourseDetails></IndCourseDetails>,
           loader: ({params})=>fetch (`https://edu-10-server.vercel.app/courses/${params.id}`)
+        },
+        {
+          path:'/courses/premium/:id',
+          element:<PrivateRoute ><PremiumCourseDetails></PremiumCourseDetails>,</PrivateRoute>,
+          loader: ({params})=>fetch (`https://edu-10-server.vercel.app/courses/premium/${params.id}`)
         },
   
       ]

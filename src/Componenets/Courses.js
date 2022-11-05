@@ -18,17 +18,18 @@ const Courses = () => {
     return (
         <div>
             <p className='text-4xl text-bold text-center text-black'>There are {courses.length} courses available</p>
-            <div className='flex mt-24'>
+            <div className='md:flex mt-24'>
                 
-                <div className='border-dashed border-2 border-indigo-600 h-2/4 rounded p-3 m-2'>
-                    <p className='font-bold text-orange-600 text-xl'>Course List</p>
+                <div className='md:border-dashed flex md:block md:border-2  md:border-indigo-600 md:h-2/4 md:rounded md:p-3 md:m-2 text-xs md:text-base'>
+
+                    <p className='font-bold hidden md:block text-orange-600 text-xl'>Course List</p>
                 {
-                    courses.map(course => <p className='text-green-900 hover:text-rose-900 hover:font-medium hover:text-base my-4' key={course.id}>
+                    courses.map(course => <p className='text-green-900 hover:text-rose-900 md:hover:font-medium md:hover:text-base mx-2 my-4' key={course.id}>
                         <Link to={`/courses/${course.id}`}>{course.name}</Link>
                     </p>)
                 }
                 </div>
-                <div className='pr-8 grid grid-cols-3 gap-12' >
+                <div className='pr-8 grid grid-cols-1 md:grid-cols-3 gap-12 ml-12 md:ml-0' >
 
                     {
                         courseDetails.map(courseDetail => <div key={courseDetail._id} className="card w-96 bg-base-100 shadow-xl">
