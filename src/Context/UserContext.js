@@ -27,8 +27,11 @@ const UserContext = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const updateName = (name) => {
-        return updateProfile(auth.currentUser, { displayName: name })
+    const updateNameAndPhoto = (profile) => {
+        
+        
+        setLoading(true)
+        return updateProfile(auth.currentUser,  profile)
     }
 
 
@@ -54,7 +57,7 @@ const UserContext = ({ children }) => {
     const authInfo = {
         user,
         createUser,
-        updateName,
+    updateNameAndPhoto,
         signInWithGoogle,
         logout,
         signInWithGithub,

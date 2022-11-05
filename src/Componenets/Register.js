@@ -12,7 +12,7 @@ import { AuthContext } from '../Context/UserContext'
 
 const Register = () => {
   const {emailError, setEmailError}= useState()
-  const { createUser, updateName, signInWithGoogle, signInWithGithub, } = useContext(AuthContext)
+  const { createUser, updateNameAndPhoto, signInWithGoogle, signInWithGithub, } = useContext(AuthContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -22,25 +22,33 @@ const Register = () => {
     const name = e.target.name.value
     const email = e.target.email.value
     const password = e.target.password.value
+    const photoURL =e.target.photoURL.value
 
    createUser(email,password)
       .then(result => {
-        console.log(result.user) 
+        console.log(result.user);
+        e.target.reset();
+        handleUpdateUserProfile(name,photoURL)
 
 
-        updateName(name)
-        .then(() => {
-          alert('Name updated')
-        })
-        .catch(error => {
-          setEmailError(error)
-        })
+
 
       })
       .catch(error => {
         setEmailError(error)
       })
   }
+
+
+const handleUpdateUserProfile=(name,photoURL)=>{
+  const profile ={
+    displayName: name,
+    photoURL:photoURL,
+  }
+  updateNameAndPhoto(profile)
+  .then(()=>{})
+  .catch(error=>console.log(error))
+}
 
   // Gooogle sign in 
 
@@ -113,6 +121,20 @@ const Register = () => {
                 name='name'
                 id='name'
                 placeholder='Enter Your Name Here'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
+                data-temp-mail-org='0'
+              />
+            </div>
+            <div>
+              <label htmlFor='email' className='block mb-2 text-sm'>
+                Photo Url
+              </label>
+              <input
+                name="photoURL"
+                 type="text" 
+                 placeholder="PhotoURL"
+                id='photoURL'
+               
                 className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
