@@ -1,6 +1,6 @@
 # About Edu Dev quiz project
 
-## Live Website Link :  
+## Live Website Link :  https://dev-edu-7df34.web.app/
 
 ### Details about Project :
 * This is a programming related learning website.
